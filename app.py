@@ -52,16 +52,64 @@ checkNumber(35)
 
 #Challenge: Bill Tip
 
+"""
 def determineTip(billValue, service):
     if service == "bad":
-        print(billValue)
-    elif service == "okay":
-        billValue = billValue + (billValue * 0.15)
-        print(billValue)
-    elif service == "good":
-        billValue = billValue + (billValue * 0.2)
-        print(billValue)
-    elif service == "great":
-        billValue = billValue + (billValue * 0.25)
+        total = billValue
+        tip = total - billValue
+        print("Total: $" + str(total))
+        print(f"Tip: {tip} (No tip)")
 
-determineTip(15, "great")
+    elif service == "okay":
+        total = billValue + (billValue * 0.15)
+        print("Total: $" + str(total))
+        tip = total - billValue
+        print(f"Tip: {tip} (0.15%)")
+
+    elif service == "good":
+        total = billValue + (billValue * 0.2)
+        print("Total: $" + str(total))
+        tip = total - billValue
+        print(f"Tip: {tip} (0.20%)")
+
+    elif service == "great":
+        total = billValue + (billValue * 0.25)
+        print("Total: $" + str(total))
+        tip = total - billValue
+        print(f"Tip: {tip} (0.25%)")
+
+determineTip(15, "bad")
+"""
+
+#Challenge: Find Factors
+
+"""
+number = int(input("Input number: "))
+
+def determineFactors(x):
+    factorList = []
+    
+    for i in range(1, x+1):
+        if x%i < 1:
+            factorList.append(i)
+
+    print(factorList)
+
+determineFactors(number)
+"""
+
+#Challenge: Greatest Common Factor
+
+def findGCF(x, y):
+    greatestX = 0
+    greatestY = 0
+
+    for i in range(x+1) and range(y+1):
+        if i > greatestX  and i > greatestY:
+            greatestX = i
+            greatestY = i
+            if x%greatestX ==0 and y%greatestX==0:
+                gcf = greatestX
+    print(f"GCF: {gcf}")
+
+findGCF(28, 42)
